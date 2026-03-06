@@ -28,11 +28,11 @@ app.get('/api', (req, res) => {
 });
 
 // Serve static files từ thư mục build
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Xử lý tất cả các route khác (cho React Router)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
